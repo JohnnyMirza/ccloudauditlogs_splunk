@@ -1,0 +1,43 @@
+bootstrap.servers=${CLOUD_URL}
+key.converter=org.apache.kafka.connect.storage.StringConverter
+value.converter=io.confluent.connect.avro.AvroConverter
+
+ssl.endpoint.identification.algorithm=https
+security.protocol=SASL_SSL
+sasl.mechanism=PLAIN
+sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username=${CLOUD_KEY} password="${CLOUD_SECRET}";
+request.timeout.ms=20000
+retry.backoff.ms=500
+
+producer.bootstrap.servers=${CLOUD_URL}
+producer.ssl.endpoint.identification.algorithm=https
+producer.security.protocol=SASL_SSL
+producer.sasl.mechanism=PLAIN
+producer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username=${CLOUD_KEY} password="${CLOUD_SECRET}";
+producer.request.timeout.ms=20000
+producer.retry.backoff.ms=500
+
+consumer.ssl.endpoint.identification.algorithm=https
+consumer.security.protocol=SASL_SSL
+consumer.sasl.mechanism=PLAIN
+consumer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username=${CLOUD_KEY} password="${CLOUD_SECRET}";
+consumer.request.timeout.ms=20000
+consumer.retry.backoff.ms=500
+
+offset.flush.interval.ms=10000
+offset.storage.file.filename=/tmp/connect.offsets
+plugin.path=./confluent/share/confluent-hub-components
+
+# Schema Registry specific settings
+value.converter.basic.auth.credentials.source=USER_INFO
+value.converter.schema.registry.basic.auth.user.info=${SCHEMA_REGISTRY_BASIC_AUTH}
+value.converter.schema.registry.url=${SCHEMA_REGISTRY_URL}
+reporter.admin.bootstrap.servers=${CLOUD_URL}
+reporter.admin.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username=${CLOUD_KEY} password="${CLOUD_SECRET}";
+reporter.admin.security.protocol=SASL_SSL
+reporter.admin.sasl.mechanism=PLAIN
+
+reporter.producer.bootstrap.servers=${CLOUD_URL}
+reporter.producer.sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username=${CLOUD_KEY} password="${CLOUD_SECRET}";
+reporter.producer.security.protocol=SASL_SSL
+reporter.producer.sasl.mechanism=PLAIN

@@ -1,0 +1,99 @@
+---
+version: '2'
+services:
+
+
+  # connect:
+  #   image: confluentinc/cp-kafka-connect:latest
+  #   hostname: $CONTAINER_NAME
+  #   container_name: $CONTAINER_NAME
+  #   user: root
+  #   volumes: 
+  #     # - ./connect/:/usr/share/confluent-hub-components/
+  #     - ./scripts/:/tmp/
+  #     # - ./confluent_cloud_app:/opt/splunk/etc/apps/confluent_cloud_app
+  #   ports:
+  #     - "8083:8083"
+  #   environment:
+  #     CONNECT_BOOTSTRAP_SERVERS: "${CLOUD_URL}"
+  #     CONNECT_REST_ADVERTISED_HOST_NAME: ${CONTAINER_NAME}
+  #     CONNECT_REST_PORT: 8083
+  #     CONNECT_GROUP_ID: ${KAFKA_TOPIC_NAME}-connect-group
+  #     CONNECT_CONFIG_STORAGE_TOPIC: ${KAFKA_TOPIC_NAME}-connect-configs-1
+  #     CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 3
+  #     CONNECT_OFFSET_STORAGE_TOPIC: ${KAFKA_TOPIC_NAME}-connect-offsets-1
+  #     CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 3
+  #     CONNECT_STATUS_STORAGE_TOPIC: ${KAFKA_TOPIC_NAME}-connect-status-1
+  #     CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 3
+  #     CONNECT_KEY_CONVERTER: org.apache.kafka.connect.storage.StringConverter
+  #     CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+  #     CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+  #     CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+  #     CONNECT_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+  #     CLASSPATH: /usr/share/java/monitoring-interceptors/monitoring-interceptors-5.5.0.jar
+  #     CONNECT_PRODUCER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor"
+  #     CONNECT_CONSUMER_INTERCEPTOR_CLASSES: "io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor"
+  #     CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components,/usr/local/connect/plugins"
+  #     CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
+  #     # Added for Confluent Cloud
+  #     CONNECT_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: https
+  #     CONNECT_SECURITY_PROTOCOL: SASL_SSL
+  #     CONNECT_SASL_MECHANISM: PLAIN
+  #     CONNECT_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='${CLOUD_SECRET}' password='${CLOUD_TOKEN}';"
+  #     CONNECT_REQUEST_TIMEOUT_MS: 20000
+  #     CONNECT_RETRY_BACKOFF_MS: 500
+  #     CONNECT_PRODUCER_BOOTSTRAP_SERVERS: "${CLOUD_URL}"
+  #     CONNECT_PRODUCER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: https
+  #     CONNECT_PRODUCER_SECURITY_PROTOCOL: SASL_SSL
+  #     CONNECT_PRODUCER_SASL_MECHANISM: PLAIN
+  #     CONNECT_PRODUCER_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='${CLOUD_SECRET}' password='${CLOUD_TOKEN}';"
+  #     CONNECT_PRODUCER_REQUEST_TIMEOUT_MS: 20000
+  #     CONNECT_PRODUCER_RETRY_BACKOFF_MS: 500
+  #     CONNECT_CONSUMER_BOOTSTRAP_SERVERS: "${CLOUD_URL}"
+  #     CONNECT_CONSUMER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: https
+  #     CONNECT_CONSUMER_SECURITY_PROTOCOL: SASL_SSL
+  #     CONNECT_CONSUMER_SASL_MECHANISM: PLAIN
+  #     CONNECT_CONSUMER_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='${CLOUD_SECRET}' password='${CLOUD_TOKEN}';"
+  #     CONNECT_CONSUMER_REQUEST_TIMEOUT_MS: 20000
+  #     CONNECT_CONSUMER_RETRY_BACKOFF_MS: 500
+  #     CONNECT_OFFSET_FLUSH_INTERVAL_MS: 10000
+  #     CONNECT_OFFSET_STORAGE_FILE_FILENAME: "/tmp/connect.offsets"
+  #     # Schema Registry specific settings
+  #     CONNECT_VALUE_CONVERTER_BASIC_AUTH_CREDENTIALS_SOURCE: USER_INFO
+  #     CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_BASIC_AUTH_USER_INFO: ${SCHEMA_REGISTRY_BASIC_AUTH}
+  #     CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: ${SCHEMA_REGISTRY_URL}
+  #     CONNECT_DATABASE_HISTORY_KAFKA_BOOTSTRAP_SERVERS: ${CLOUD_URL}
+  #     CONNECT_DATABASE_HISTORY_CONSUMER_SECURITY_PROTOCOL: SASL_SSL
+  #     CONNECT_DATABASE_HISTORY_CONSUMER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: https
+  #     CONNECT_DATABASE_HISTORY_CONSUMER_SASL_MECHANISM: PLAIN
+  #     CONNECT_DATABASE_HISTORY_CONSUMER_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='${CLOUD_SECRET}' password='${CLOUD_TOKEN}';"
+  #     CONNECT_DATABASE_HISTORY_PRODUCER_SECURITY_PROTOCOL: SASL_SSL
+  #     CONNECT_DATABASE_HISTORY_PRODUCER_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: https
+  #     CONNECT_DATABASE_HISTORY_PRODUCER_SASL_MECHANISM: PLAIN
+  #     CONNECT_DATABASE_HISTORY_PRODUCER_SASL_JAAS_CONFIG: "org.apache.kafka.common.security.plain.PlainLoginModule required username='${CLOUD_SECRET}' password='${CLOUD_TOKEN}';"
+  #   command:
+  #     - bash 
+  #     - -c 
+  #     - |
+  #       echo "Installing connector plugins"
+  #       confluent-hub install --no-prompt splunk/kafka-connect-splunk:latest
+  #       #
+  #       echo "Launching Kafka Connect worker"
+  #       /etc/confluent/docker/run & 
+  #       #
+  #       sleep infinity
+  #     - sh -c "/tmp/submit_splunk_sink.sh"
+
+  splunk_search:
+    image: splunk/splunk:latest
+    container_name: splunk_search
+    user: root
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_HEC_TOKEN=3bca5f4c-1eff-4eee-9113-ea94c284478a
+      - SPLUNK_PASSWORD=Password1
+      # - SPLUNK_LICENSE_URI=Free
+      - SPLUNK_APPS_URL=https://raw.githubusercontent.com/JohnnyMirza/ccloudauditlogs_splunk/main/confluent_cloud_app.tgz,https://raw.githubusercontent.com/JohnnyMirza/ccloudauditlogs_splunk/main/splunk-sankey-diagram-custom-visualization_150.tgz
+    ports:
+      - 8000:8000
+      - 8889:8088

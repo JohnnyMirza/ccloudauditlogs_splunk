@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# (Copyright) [2020] Confluent, Inc.
+
+base_dir=$(dirname $0)
+replicator="kafka-connect-replicator"
+
+# Figuring out which Java to use
+if [ -z "$JAVA_HOME" ]; then
+  JAVA="java"
+else
+  JAVA="$JAVA_HOME/bin/java"
+fi
+
+
+# cd -P deals with symlink from /bin to /usr/bin
+if [[  -d "$base_dir/../share/java" ]]; then
+  java_base_dir=$( cd -P "$base_dir/../share/java" && pwd )
+  replicator_dir="$java_base_dir/$replicator"
+  # finding verifier jar
+  verifier_jar=$(find ${replicator_dir}/verifier-*)
+fi
+
+exec $JAVA -cp $verifier_jar io.confluent.connect.replicator.Verifier "$@"
