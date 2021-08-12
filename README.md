@@ -9,7 +9,7 @@ Need to edit two files with your details (see below)
 
 To get started:
 ```
-1. git clone https://github.com/JohnnyMirza/ccloudauditlogs_splunk.git
+1. git clone https://github.com/JohnnyMirza/ccloudauditlogs_splunk_standalone.git
 2. Option 1: From your Confluent Cloud Console, "CLI and tools -> Kafka Connect" and generate a "my-connect-standalone.properties" file.
    Option 2: There is a sample "my-connect-standalone.properties.sample" in this repo, you can added your API-keys in the relevant section (rename to my-connect-standalone.properties). refer to the below for more details
     -CLOUD_URL: cluster->Settings->Bootstrap server
