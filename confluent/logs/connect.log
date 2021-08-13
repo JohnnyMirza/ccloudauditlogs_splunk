@@ -1,0 +1,962 @@
+[2021-08-12 19:16:19,658] INFO Kafka Connect standalone worker initializing ... (org.apache.kafka.connect.cli.ConnectStandalone:68)
+[2021-08-12 19:16:19,673] INFO WorkerInfo values: 
+	jvm.args = -Xms256M, -Xmx2G, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+ExplicitGCInvokesConcurrent, -XX:MaxInlineLevel=15, -Djava.awt.headless=true, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../logs, -Dlog4j.configuration=file:./confluent/bin/../etc/kafka/connect-log4j.properties
+	jvm.spec = AdoptOpenJDK, OpenJDK 64-Bit Server VM, 11.0.8, 11.0.8+10
+	jvm.classpath = /Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/gax-1.60.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jose4j-0.7.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-log4j-appender-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-transforms-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jakarta.xml.bind-api-2.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-jaxrs-base-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/commons-logging-1.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-core-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/broker-plugins-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/scala-collection-compat_2.13-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-transport-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-oauth-client-1.31.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-http-client-appengine-1.38.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/opencensus-proto-0.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/rocksdbjni-5.18.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jopt-simple-5.0.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jersey-common-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/gson-2.8.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-security-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jmespath-java-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/aalto-xml-1.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-cloud-core-1.93.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/rbac-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-codec-dns-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka_2.13-6.2.0-ce-test.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/brave-instrumentation-http-5.13.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/zookeeper-3.5.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reflections-0.9.12.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/slf4j-log4j12-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-common-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/KeePassJava2-dom-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/zipkin-reporter-brave-2.16.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-basic-auth-extension-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/javax.annotation-api-1.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/snappy-java-1.1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-dataformat-csv-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/protobuf-java-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/azure-identity-1.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-client-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/auto-value-annotations-1.7.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-codec-http-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/KeePassJava2-kdb-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/joda-time-2.9.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/api-common-1.10.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/argparse4j-0.7.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/aws-java-sdk-s3-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/activation-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/scala-logging_2.13-3.9.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-cloud-core-http-1.93.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/zipkin-2.23.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/core-1.54.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/httpcore-4.4.13.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka_2.13-6.2.0-ce-javadoc.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-streams-scala_2.13-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/gax-httpjson-0.77.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-raft-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-http-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/animal-sniffer-annotations-1.18.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-mirror-client-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/confluent-licensing-new-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-resolver-dns-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-transport-native-kqueue-4.1.63.Final-osx-x86_64.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/aws-java-sdk-sts-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/confluent-log4j-1.2.17-cp2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/lang-tag-1.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-codec-http2-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/KeePassJava2-jaxb-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/annotations-15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-jaxrs-json-provider-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-http-client-1.38.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/javax.servlet-api-3.1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/aws-java-sdk-kms-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jersey-server-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-all-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/cloudevents-core-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/ion-java-1.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/proto-google-common-protos-2.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/hk2-locator-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/KeePassJava2-kdbx-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/protobuf-java-util-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-handler-proxy-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-api-services-storage-v1-rev20200927-1.30.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-module-paranamer-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/cloudevents-kafka-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/plexus-utils-3.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/cloudevents-json-jackson-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/scala-reflect-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jcip-annotations-1.0-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-tools-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/flatbuffers-java-1.9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jakarta.ws.rs-api-2.1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/zookeeper-jute-3.5.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/aopalliance-repackaged-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/failureaccess-1.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jline-3.12.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/scala-library-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/scala-java8-compat_2.13-0.9.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/stax2-api-4.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-runtime-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/rest-authorizer-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/zipkin-reporter-2.16.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/bcpkix-fips-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-module-scala_2.13-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-dataformat-cbor-2.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/oauth2-oidc-sdk-9.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/asm-8.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/commons-cli-1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/opencensus-contrib-http-util-0.24.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/paranamer-2.8.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-codec-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/error_prone_annotations-2.3.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-cloud-storage-1.113.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/woodstox-core-6.2.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-servlet-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jaxb-api-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/content-type-2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/metrics-core-2.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-auth-library-oauth2-http-0.22.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jakarta.activation-api-1.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-buffer-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/database-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-auth-library-credentials-0.22.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-util-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-server-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/accessors-smart-2.4.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/lz4-java-1.7.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reactive-streams-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/osgi-resource-locator-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reactor-core-3.4.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/commons-math3-3.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/confluent-serializers-new-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-datatype-jdk8-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jersey-hk2-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-servlets-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka_2.13-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-streams-test-utils-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jakarta.inject-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/checker-qual-2.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/audience-annotations-0.5.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/hk2-utils-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/javax.ws.rs-api-2.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/cloudevents-api-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/annotations-3.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-clients-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/telemetry-api-1.703.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/commons-codec-1.14.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/brave-5.13.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-transport-native-epoll-4.1.63.Final-linux-x86_64.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/telemetry-client-1.703.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-mirror-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/bctls-fips-1.0.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jersey-container-servlet-core-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/authorizer-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/hk2-api-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-io-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-http-client-jackson2-1.38.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jersey-container-servlet-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/opencensus-api-0.24.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jbcrypt-0.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-databind-2.10.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/azure-core-http-netty-1.9.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jakarta.annotation-api-1.3.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/j2objc-annotations-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-resolver-dns-native-macos-4.1.63.Final-osx-x86_64.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/maven-artifact-3.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-tcnative-boringssl-static-2.0.39.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reactor-netty-core-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reactor-netty-http-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-streams-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/bc-fips-1.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/checker-compat-qual-2.5.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/auth-providers-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reactor-netty-http-brave-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-resolver-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/internal-rest-server-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/msal4j-1.10.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jna-platform-5.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-json-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/ce-sbk_2.13-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-handler-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/msal4j-persistence-extension-1.1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-file-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/grpc-context-1.33.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jersey-client-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-transport-native-unix-common-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-datatype-protobuf-0.9.11-jackson2.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-shell-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/zstd-jni-1.4.9-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/nimbus-jose-jwt-9.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/httpclient-4.5.13.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/google-api-client-1.30.11.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-streams-examples-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-transport-native-epoll-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/connect-api-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-client-plugins-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/reactor-netty-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jna-5.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/confluent-audit-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-continuation-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jsr305-3.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/commons-lang3-3.11.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka-metadata-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-dataformat-xml-2.12.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/kafka.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/azure-core-1.16.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-datatype-jsr310-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/javassist-3.27.0-GA.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/telemetry-events-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/json-smart-2.4.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jakarta.validation-api-2.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jackson-module-jaxb-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/guava-28.1-jre.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/netty-codec-socks-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/threetenbp-1.5.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/KeePassJava2-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/confluent-resource-names-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/jetty-util-ajax-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/aws-java-sdk-core-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/KeePassJava2-simple-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka/proto-google-iam-v1-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/confluent-common/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/confluent-common/common-config-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/confluent-common/common-metrics-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/confluent-common/common-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/confluent-common/build-tools-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-connect-json-schema-converter-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/commons-logging-1.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-connect-protobuf-converter-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-core-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlinx-coroutines-core-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-connect-avro-data-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/rocksdbjni-5.18.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jersey-common-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/gson-2.8.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-reflect-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/wire-runtime-3.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/guava-30.1.1-jre.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-scripting-common-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-stdlib-jdk7-1.4.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/protobuf-java-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/joda-time-2.9.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-json-schema-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-stdlib-common-1.4.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-streams-avro-serde-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-protobuf-provider-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-protobuf-types-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/org.everit.json.schema-1.12.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/protobuf-java-util-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/grpc-core-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/wire-schema-3.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jakarta.ws.rs-api-2.1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/commons-validator-1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/failureaccess-1.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/scala-library-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/grpc-protobuf-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/annotations-13.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/grpc-protobuf-lite-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-json-schema-provider-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-datatype-guava-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-schema-registry-client-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/error_prone_annotations-2.3.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-stdlib-jdk8-1.4.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/commons-compress-1.20.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-json-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/swagger-annotations-1.6.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/handy-uri-templates-2.1.8.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/osgi-resource-locator-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/validation-api-2.0.1.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-datatype-jdk8-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-stdlib-1.4.21.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jakarta.inject-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/checker-qual-3.8.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/googleapis-common-protos-0.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-module-parameter-names-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/commons-collections-3.2.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/avro-1.10.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-streams-6.2.0-ccs.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-databind-2.10.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-scripting-jvm-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jakarta.annotation-api-1.3.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/j2objc-annotations-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/classgraph-4.8.21.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-schema-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-protobuf-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-script-runtime-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/okio-2.8.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-connect-avro-converter-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/re2j-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-scripting-compiler-embeddable-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jsr305-3.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-datatype-joda-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/mbknor-jackson-jsonschema_2.13-1.0.39.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-avro-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kotlin-scripting-compiler-impl-embeddable-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/jackson-datatype-jsr310-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/grpc-stub-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/json-20201115.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/commons-digester-1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-streams-protobuf-serde-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/kafka-serde-tools/kafka-streams-json-schema-serde-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/share/java/monitoring-interceptors/monitoring-interceptors-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-broker-plugins/build/libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-broker-plugins/build/dependant-libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-auth-providers/build/libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-auth-providers/build/dependant-libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-rest-server/build/libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-rest-server/build/dependant-libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-audit/build/libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../ce-audit/build/dependant-libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/gax-1.60.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jose4j-0.7.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-log4j-appender-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-transforms-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jakarta.xml.bind-api-2.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-jaxrs-base-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/commons-logging-1.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-core-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/broker-plugins-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/scala-collection-compat_2.13-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-transport-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-oauth-client-1.31.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-http-client-appengine-1.38.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/opencensus-proto-0.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/rocksdbjni-5.18.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jopt-simple-5.0.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jersey-common-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/gson-2.8.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-security-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jmespath-java-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/aalto-xml-1.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-cloud-core-1.93.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/rbac-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-codec-dns-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka_2.13-6.2.0-ce-test.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/brave-instrumentation-http-5.13.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/zookeeper-3.5.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reflections-0.9.12.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/slf4j-log4j12-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-common-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/KeePassJava2-dom-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/zipkin-reporter-brave-2.16.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-basic-auth-extension-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/javax.annotation-api-1.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/snappy-java-1.1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-dataformat-csv-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/protobuf-java-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/azure-identity-1.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-client-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/auto-value-annotations-1.7.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-codec-http-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/KeePassJava2-kdb-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/joda-time-2.9.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/api-common-1.10.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/argparse4j-0.7.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/aws-java-sdk-s3-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/activation-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/scala-logging_2.13-3.9.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-cloud-core-http-1.93.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/zipkin-2.23.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/core-1.54.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/httpcore-4.4.13.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka_2.13-6.2.0-ce-javadoc.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-streams-scala_2.13-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/gax-httpjson-0.77.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-raft-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-http-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/animal-sniffer-annotations-1.18.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-mirror-client-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/confluent-licensing-new-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-resolver-dns-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-transport-native-kqueue-4.1.63.Final-osx-x86_64.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/aws-java-sdk-sts-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/confluent-log4j-1.2.17-cp2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/lang-tag-1.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-codec-http2-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/KeePassJava2-jaxb-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/annotations-15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-jaxrs-json-provider-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-http-client-1.38.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/javax.servlet-api-3.1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/aws-java-sdk-kms-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jersey-server-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-all-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/cloudevents-core-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/ion-java-1.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/proto-google-common-protos-2.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/hk2-locator-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/KeePassJava2-kdbx-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/protobuf-java-util-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-handler-proxy-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-api-services-storage-v1-rev20200927-1.30.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-module-paranamer-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/cloudevents-kafka-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/plexus-utils-3.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/cloudevents-json-jackson-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/scala-reflect-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jcip-annotations-1.0-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-tools-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/flatbuffers-java-1.9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jakarta.ws.rs-api-2.1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/zookeeper-jute-3.5.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/aopalliance-repackaged-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/failureaccess-1.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jline-3.12.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/scala-library-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/scala-java8-compat_2.13-0.9.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/stax2-api-4.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-runtime-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/rest-authorizer-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/zipkin-reporter-2.16.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/bcpkix-fips-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-module-scala_2.13-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-dataformat-cbor-2.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/oauth2-oidc-sdk-9.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/asm-8.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/commons-cli-1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/opencensus-contrib-http-util-0.24.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/paranamer-2.8.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-codec-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/error_prone_annotations-2.3.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-cloud-storage-1.113.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/woodstox-core-6.2.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-servlet-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jaxb-api-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/content-type-2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/metrics-core-2.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-auth-library-oauth2-http-0.22.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jakarta.activation-api-1.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-buffer-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/database-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-auth-library-credentials-0.22.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-util-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-server-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/accessors-smart-2.4.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/lz4-java-1.7.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reactive-streams-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/osgi-resource-locator-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reactor-core-3.4.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/commons-math3-3.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/confluent-serializers-new-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-datatype-jdk8-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jersey-hk2-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-servlets-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka_2.13-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-streams-test-utils-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jakarta.inject-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/checker-qual-2.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/audience-annotations-0.5.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/hk2-utils-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/javax.ws.rs-api-2.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/cloudevents-api-2.0.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/annotations-3.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-clients-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/telemetry-api-1.703.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/commons-codec-1.14.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/brave-5.13.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-transport-native-epoll-4.1.63.Final-linux-x86_64.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/telemetry-client-1.703.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-mirror-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/bctls-fips-1.0.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jersey-container-servlet-core-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/authorizer-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/hk2-api-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-io-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-http-client-jackson2-1.38.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jersey-container-servlet-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/opencensus-api-0.24.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jbcrypt-0.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-databind-2.10.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/azure-core-http-netty-1.9.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jakarta.annotation-api-1.3.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/j2objc-annotations-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-resolver-dns-native-macos-4.1.63.Final-osx-x86_64.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/maven-artifact-3.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-tcnative-boringssl-static-2.0.39.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reactor-netty-core-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reactor-netty-http-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-streams-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/bc-fips-1.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/checker-compat-qual-2.5.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/auth-providers-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reactor-netty-http-brave-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-resolver-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/internal-rest-server-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/msal4j-1.10.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jna-platform-5.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-json-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/ce-sbk_2.13-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-handler-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/msal4j-persistence-extension-1.1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-file-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/grpc-context-1.33.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jersey-client-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-transport-native-unix-common-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-datatype-protobuf-0.9.11-jackson2.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-shell-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/zstd-jni-1.4.9-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/nimbus-jose-jwt-9.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/httpclient-4.5.13.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/google-api-client-1.30.11.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-streams-examples-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-transport-native-epoll-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/connect-api-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-client-plugins-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/reactor-netty-1.0.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jna-5.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/confluent-audit-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-continuation-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jsr305-3.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/commons-lang3-3.11.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka-metadata-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-dataformat-xml-2.12.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/kafka.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/azure-core-1.16.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-datatype-jsr310-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/javassist-3.27.0-GA.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/telemetry-events-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/json-smart-2.4.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jakarta.validation-api-2.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jackson-module-jaxb-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/guava-28.1-jre.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/netty-codec-socks-4.1.63.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/threetenbp-1.5.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/KeePassJava2-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/confluent-resource-names-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/jetty-util-ajax-9.4.39.v20210325.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/aws-java-sdk-core-1.11.784.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/KeePassJava2-simple-2.1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka/proto-google-iam-v1-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-metadata-service/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-util-ajax-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javax.websocket-api-1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.xml.bind-api-2.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jackson-jaxrs-base-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jackson-core-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-common-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/guava-30.1.1-jre.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-continuation-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/asm-analysis-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-webapp-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javax.annotation-api-1.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/snappy-java-1.1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-jmx-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/activation-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/websocket-servlet-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/websocket-api-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javassist-3.25.0-GA.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/asm-tree-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-io-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jackson-jaxrs-json-provider-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javax.servlet-api-3.1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-server-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-annotations-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/hk2-locator-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/websocket-client-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-servlets-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/asm-commons-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.ws.rs-api-2.1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/aopalliance-repackaged-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/failureaccess-1.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/asm-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-jaas-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/error_prone_annotations-2.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-server-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/hibernate-validator-6.1.7.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-util-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-bean-validation-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/classmate-1.3.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/websocket-common-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jaxb-api-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.el-api-3.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-plus-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-servlet-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.activation-api-1.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/lz4-java-1.7.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-jndi-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/osgi-resource-locator-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-hk2-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javax-websocket-server-impl-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.inject-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/hk2-utils-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/checker-qual-3.8.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javax.websocket-client-api-1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-container-servlet-core-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/hk2-api-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-container-servlet-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jackson-databind-2.10.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jboss-logging-3.3.2.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.annotation-api-1.3.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/j2objc-annotations-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-http-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/javax-websocket-client-impl-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jackson-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-client-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-xml-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.el-3.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jersey-client-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/zstd-jni-1.4.9-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jsr305-3.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jetty-security-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jakarta.validation-api-2.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/jackson-module-jaxb-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/rest-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/kafka-clients-6.2.0-ccs.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/rest-utils/websocket-server-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-common/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-common/common-config-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-common/common-metrics-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-common/common-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-common/build-tools-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-util-ajax-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javax.websocket-api-1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.xml.bind-api-2.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jackson-jaxrs-base-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jackson-core-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-common-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/ce-kafka-http-server-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/guava-30.1.1-jre.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-continuation-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/asm-analysis-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-webapp-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javax.annotation-api-1.3.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/snappy-java-1.1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-jmx-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/activation-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/websocket-servlet-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/websocket-api-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javassist-3.25.0-GA.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/asm-tree-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-io-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jackson-jaxrs-json-provider-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javax.servlet-api-3.1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-server-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-annotations-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/hk2-locator-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/websocket-client-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-servlets-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/asm-commons-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.ws.rs-api-2.1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/aopalliance-repackaged-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/failureaccess-1.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/asm-9.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-jaas-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/error_prone_annotations-2.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-server-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/hibernate-validator-6.1.7.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-util-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-bean-validation-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/classmate-1.3.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/websocket-common-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jaxb-api-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.el-api-3.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-plus-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-servlet-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.activation-api-1.2.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/lz4-java-1.7.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-jndi-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/osgi-resource-locator-1.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-hk2-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javax-websocket-server-impl-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.inject-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/hk2-utils-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/checker-qual-3.8.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/kafka-clients-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javax.websocket-client-api-1.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-container-servlet-core-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/hk2-api-2.6.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-container-servlet-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jackson-databind-2.10.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jboss-logging-3.3.2.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/common-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.annotation-api-1.3.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/j2objc-annotations-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-http-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/javax-websocket-client-impl-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jackson-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-client-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-xml-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.el-3.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jersey-client-2.34.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/zstd-jni-1.4.9-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jsr305-3.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jetty-security-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jakarta.validation-api-2.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/jackson-module-jaxb-annotations-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/rest-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-http-server/websocket-server-9.4.40.v20210413.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-servlet/ce-kafka-rest-servlet-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/snappy-java-1.1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/lz4-java-1.7.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/javax.ws.rs-api-2.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/kafka-clients-6.2.0-ce.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/common-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/ce-kafka-rest-extensions-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/ce-kafka-rest-extensions/zstd-jni-1.4.9-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/commons-logging-1.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-core-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlinx-coroutines-core-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/auto-value-annotations-1.7.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/scala-collection-compat_2.13-2.3.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-metadata-6.2.0-ccs.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jopt-simple-5.0.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/gson-2.8.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-reflect-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/wire-runtime-3.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/guava-30.1.1-jre.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-scripting-common-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/zookeeper-3.5.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-stdlib-jdk7-1.4.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-raft-6.2.0-ccs.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/snappy-java-1.1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-dataformat-csv-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/protobuf-java-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka_2.13-6.2.0-ccs.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/joda-time-2.9.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/spotbugs-annotations-4.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-json-schema-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/argparse4j-0.7.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/scala-logging_2.13-3.9.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/slf4j-api-1.7.30.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/common-config-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/confluent-log4j-1.2.17-cp2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-protobuf-provider-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-protobuf-types-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/org.everit.json.schema-1.12.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/protobuf-java-util-3.11.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/grpc-core-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-module-paranamer-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/scala-reflect-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/wire-schema-3.6.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/zookeeper-jute-3.5.9.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/commons-validator-1.6.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/failureaccess-1.0.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/scala-library-2.13.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/scala-java8-compat_2.13-0.9.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/grpc-protobuf-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/annotations-13.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/error_prone_annotations-2.5.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-module-scala_2.13-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/grpc-protobuf-lite-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-json-schema-provider-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-datatype-guava-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/commons-cli-1.4.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/paranamer-2.8.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-schema-registry-client-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-stdlib-jdk8-1.4.10.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/metrics-core-2.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/commons-compress-1.20.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-json-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/lz4-java-1.7.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/swagger-annotations-1.6.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/handy-uri-templates-2.1.8.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/validation-api-2.0.1.Final.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-datatype-jdk8-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-stdlib-1.4.21.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/audience-annotations-0.5.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/checker-qual-3.8.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/googleapis-common-protos-0.0.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-module-parameter-names-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/commons-collections-3.2.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/avro-1.10.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-scripting-jvm-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/common-utils-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-stdlib-common-1.4.21.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/j2objc-annotations-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/classgraph-4.8.21.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-schema-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-protobuf-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-script-runtime-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/okio-2.8.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/re2j-1.3.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-rest-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-scripting-compiler-embeddable-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/zstd-jni-1.4.9-1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlinx-coroutines-core-common-1.1.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jsr305-3.0.2.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-datatype-joda-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/mbknor-jackson-jsonschema_2.13-1.0.39.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-avro-serializer-6.2.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kotlin-scripting-compiler-impl-embeddable-1.3.50.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/jackson-datatype-jsr310-2.10.5.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/grpc-stub-0.15.0.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/json-20201115.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/commons-digester-1.8.1.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/kafka-rest-lib/kafka-clients-6.2.0-ccs.jar:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-security/kafka-rest/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-security/schema-validator/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../support-metrics-client/build/dependant-libs-2.13.5/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../support-metrics-client/build/libs/*:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/confluent/bin/../share/java/confluent-telemetry/confluent-metrics-6.2.0-ce.jar:/usr/share/java/support-metrics-client/*
+	os.spec = Mac OS X, x86_64, 10.16
+	os.vcpus = 16
+ (org.apache.kafka.connect.runtime.WorkerInfo:71)
+[2021-08-12 19:16:19,693] INFO Scanning for plugin classes. This might take a moment ... (org.apache.kafka.connect.cli.ConnectStandalone:77)
+[2021-08-12 19:16:19,712] INFO Loading plugin from: /Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/./confluent/share/confluent-hub-components/splunk-kafka-connect-splunk (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:246)
+[2021-08-12 19:16:20,103] INFO Registered loader: PluginClassLoader{pluginLocation=file:/Users/johnnymirza/opt/git/ccloudauditlogs_splunk_standalone/./confluent/share/confluent-hub-components/splunk-kafka-connect-splunk/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:269)
+[2021-08-12 19:16:20,103] INFO Added plugin 'com.splunk.kafka.connect.SplunkSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:20,103] INFO Added plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:20,104] INFO Added plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:20,104] INFO Added plugin 'org.apache.kafka.connect.connector.policy.AllConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:20,104] INFO Added plugin 'org.apache.kafka.connect.connector.policy.PrincipalConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:20,104] INFO Added plugin 'org.apache.kafka.connect.connector.policy.NoneConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,711] INFO Registered loader: jdk.internal.loader.ClassLoaders$AppClassLoader@9e89d68 (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:269)
+[2021-08-12 19:16:22,712] INFO Added plugin 'org.apache.kafka.connect.mirror.MirrorSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,712] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,712] INFO Added plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,712] INFO Added plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,713] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,713] INFO Added plugin 'org.apache.kafka.connect.mirror.MirrorCheckpointConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,713] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,714] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,714] INFO Added plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,714] INFO Added plugin 'org.apache.kafka.connect.mirror.MirrorHeartbeatConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,714] INFO Added plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,714] INFO Added plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,714] INFO Added plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'io.confluent.connect.avro.AvroConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'io.confluent.connect.json.JsonSchemaConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'io.confluent.connect.protobuf.ProtobufConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,715] INFO Added plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,716] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,716] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,716] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,716] INFO Added plugin 'org.apache.kafka.connect.transforms.Filter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,716] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,716] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,717] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,718] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,718] INFO Added plugin 'org.apache.kafka.connect.runtime.PredicatedTransformation' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,718] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,718] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,718] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,718] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,719] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,719] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,719] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,719] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,719] INFO Added plugin 'org.apache.kafka.connect.transforms.predicates.HasHeaderKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,719] INFO Added plugin 'org.apache.kafka.connect.transforms.predicates.RecordIsTombstone' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,720] INFO Added plugin 'org.apache.kafka.connect.transforms.predicates.TopicNameMatches' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,720] INFO Added plugin 'org.apache.kafka.common.config.provider.FileConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,720] INFO Added plugin 'org.apache.kafka.connect.rest.basic.auth.extension.BasicAuthSecurityRestExtension' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:198)
+[2021-08-12 19:16:22,721] INFO Added aliases 'SplunkSinkConnector' and 'SplunkSink' to plugin 'com.splunk.kafka.connect.SplunkSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,721] INFO Added aliases 'FileStreamSinkConnector' and 'FileStreamSink' to plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,721] INFO Added aliases 'FileStreamSourceConnector' and 'FileStreamSource' to plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,721] INFO Added aliases 'MirrorCheckpointConnector' and 'MirrorCheckpoint' to plugin 'org.apache.kafka.connect.mirror.MirrorCheckpointConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,721] INFO Added aliases 'MirrorHeartbeatConnector' and 'MirrorHeartbeat' to plugin 'org.apache.kafka.connect.mirror.MirrorHeartbeatConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,722] INFO Added aliases 'MirrorSourceConnector' and 'MirrorSource' to plugin 'org.apache.kafka.connect.mirror.MirrorSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,722] INFO Added aliases 'MockConnector' and 'Mock' to plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,722] INFO Added aliases 'MockSinkConnector' and 'MockSink' to plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,722] INFO Added aliases 'MockSourceConnector' and 'MockSource' to plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,722] INFO Added aliases 'SchemaSourceConnector' and 'SchemaSource' to plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'VerifiableSinkConnector' and 'VerifiableSink' to plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'VerifiableSourceConnector' and 'VerifiableSource' to plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'AvroConverter' and 'Avro' to plugin 'io.confluent.connect.avro.AvroConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'JsonSchemaConverter' and 'JsonSchema' to plugin 'io.confluent.connect.json.JsonSchemaConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'ProtobufConverter' and 'Protobuf' to plugin 'io.confluent.connect.protobuf.ProtobufConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'ByteArrayConverter' and 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'DoubleConverter' and 'Double' to plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,723] INFO Added aliases 'FloatConverter' and 'Float' to plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,724] INFO Added aliases 'IntegerConverter' and 'Integer' to plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,724] INFO Added aliases 'LongConverter' and 'Long' to plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,724] INFO Added aliases 'ShortConverter' and 'Short' to plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,724] INFO Added aliases 'JsonConverter' and 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,724] INFO Added aliases 'StringConverter' and 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,724] INFO Added aliases 'ByteArrayConverter' and 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added aliases 'DoubleConverter' and 'Double' to plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added aliases 'FloatConverter' and 'Float' to plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added aliases 'IntegerConverter' and 'Integer' to plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added aliases 'LongConverter' and 'Long' to plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added aliases 'ShortConverter' and 'Short' to plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added aliases 'JsonConverter' and 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,725] INFO Added alias 'SimpleHeaderConverter' to plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,725] INFO Added aliases 'StringConverter' and 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,726] INFO Added aliases 'PredicatedTransformation' and 'Predicated' to plugin 'org.apache.kafka.connect.runtime.PredicatedTransformation' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,726] INFO Added alias 'Filter' to plugin 'org.apache.kafka.connect.transforms.Filter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,726] INFO Added alias 'RegexRouter' to plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,726] INFO Added alias 'TimestampRouter' to plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,726] INFO Added alias 'ValueToKey' to plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,726] INFO Added alias 'HasHeaderKey' to plugin 'org.apache.kafka.connect.transforms.predicates.HasHeaderKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,726] INFO Added alias 'RecordIsTombstone' to plugin 'org.apache.kafka.connect.transforms.predicates.RecordIsTombstone' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,726] INFO Added alias 'TopicNameMatches' to plugin 'org.apache.kafka.connect.transforms.predicates.TopicNameMatches' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,727] INFO Added alias 'BasicAuthSecurityRestExtension' to plugin 'org.apache.kafka.connect.rest.basic.auth.extension.BasicAuthSecurityRestExtension' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:424)
+[2021-08-12 19:16:22,727] INFO Added aliases 'AllConnectorClientConfigOverridePolicy' and 'All' to plugin 'org.apache.kafka.connect.connector.policy.AllConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,727] INFO Added aliases 'NoneConnectorClientConfigOverridePolicy' and 'None' to plugin 'org.apache.kafka.connect.connector.policy.NoneConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,727] INFO Added aliases 'PrincipalConnectorClientConfigOverridePolicy' and 'Principal' to plugin 'org.apache.kafka.connect.connector.policy.PrincipalConnectorClientConfigOverridePolicy' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:427)
+[2021-08-12 19:16:22,749] INFO StandaloneConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	admin.listeners = null
+	bootstrap.servers = [pkc-4ywp7.us-west-2.aws.confluent.cloud:9092]
+	client.dns.lookup = use_all_dns_ips
+	config.providers = []
+	confluent.connector.task.status.metrics = false
+	confluent.license = [hidden]
+	confluent.license.inject.into.connectors = true
+	confluent.topic = _confluent-command
+	confluent.topic.bootstrap.servers = []
+	confluent.topic.client.dns.lookup = use_all_dns_ips
+	confluent.topic.client.id = 
+	confluent.topic.connections.max.idle.ms = 540000
+	confluent.topic.consumer.allow.auto.create.topics = true
+	confluent.topic.consumer.auto.commit.interval.ms = 5000
+	confluent.topic.consumer.auto.offset.reset = latest
+	confluent.topic.consumer.check.crcs = true
+	confluent.topic.consumer.client.dns.lookup = use_all_dns_ips
+	confluent.topic.consumer.client.id = 
+	confluent.topic.consumer.client.rack = 
+	confluent.topic.consumer.connections.max.idle.ms = 540000
+	confluent.topic.consumer.default.api.timeout.ms = 60000
+	confluent.topic.consumer.enable.auto.commit = true
+	confluent.topic.consumer.exclude.internal.topics = true
+	confluent.topic.consumer.fetch.max.bytes = 52428800
+	confluent.topic.consumer.fetch.max.wait.ms = 500
+	confluent.topic.consumer.fetch.min.bytes = 1
+	confluent.topic.consumer.group.id = null
+	confluent.topic.consumer.group.instance.id = null
+	confluent.topic.consumer.heartbeat.interval.ms = 3000
+	confluent.topic.consumer.interceptor.classes = []
+	confluent.topic.consumer.internal.leave.group.on.close = true
+	confluent.topic.consumer.internal.throw.on.fetch.stable.offset.unsupported = false
+	confluent.topic.consumer.isolation.level = read_uncommitted
+	confluent.topic.consumer.max.partition.fetch.bytes = 1048576
+	confluent.topic.consumer.max.poll.interval.ms = 300000
+	confluent.topic.consumer.max.poll.records = 500
+	confluent.topic.consumer.metadata.max.age.ms = 300000
+	confluent.topic.consumer.metric.reporters = []
+	confluent.topic.consumer.metrics.num.samples = 2
+	confluent.topic.consumer.metrics.recording.level = INFO
+	confluent.topic.consumer.metrics.sample.window.ms = 30000
+	confluent.topic.consumer.partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	confluent.topic.consumer.receive.buffer.bytes = 65536
+	confluent.topic.consumer.reconnect.backoff.max.ms = 1000
+	confluent.topic.consumer.reconnect.backoff.ms = 50
+	confluent.topic.consumer.request.timeout.ms = 30000
+	confluent.topic.consumer.retry.backoff.ms = 100
+	confluent.topic.consumer.sasl.client.callback.handler.class = null
+	confluent.topic.consumer.sasl.jaas.config = null
+	confluent.topic.consumer.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	confluent.topic.consumer.sasl.kerberos.min.time.before.relogin = 60000
+	confluent.topic.consumer.sasl.kerberos.service.name = null
+	confluent.topic.consumer.sasl.kerberos.ticket.renew.jitter = 0.05
+	confluent.topic.consumer.sasl.kerberos.ticket.renew.window.factor = 0.8
+	confluent.topic.consumer.sasl.login.callback.handler.class = null
+	confluent.topic.consumer.sasl.login.class = null
+	confluent.topic.consumer.sasl.login.refresh.buffer.seconds = 300
+	confluent.topic.consumer.sasl.login.refresh.min.period.seconds = 60
+	confluent.topic.consumer.sasl.login.refresh.window.factor = 0.8
+	confluent.topic.consumer.sasl.login.refresh.window.jitter = 0.05
+	confluent.topic.consumer.sasl.mechanism = GSSAPI
+	confluent.topic.consumer.security.protocol = PLAINTEXT
+	confluent.topic.consumer.security.providers = null
+	confluent.topic.consumer.send.buffer.bytes = 131072
+	confluent.topic.consumer.session.timeout.ms = 10000
+	confluent.topic.consumer.socket.connection.setup.timeout.max.ms = 30000
+	confluent.topic.consumer.socket.connection.setup.timeout.ms = 10000
+	confluent.topic.consumer.ssl.cipher.suites = null
+	confluent.topic.consumer.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	confluent.topic.consumer.ssl.endpoint.identification.algorithm = https
+	confluent.topic.consumer.ssl.engine.factory.class = null
+	confluent.topic.consumer.ssl.key.password = null
+	confluent.topic.consumer.ssl.keymanager.algorithm = SunX509
+	confluent.topic.consumer.ssl.keystore.certificate.chain = null
+	confluent.topic.consumer.ssl.keystore.key = null
+	confluent.topic.consumer.ssl.keystore.location = null
+	confluent.topic.consumer.ssl.keystore.password = null
+	confluent.topic.consumer.ssl.keystore.type = JKS
+	confluent.topic.consumer.ssl.protocol = TLSv1.3
+	confluent.topic.consumer.ssl.provider = null
+	confluent.topic.consumer.ssl.secure.random.implementation = null
+	confluent.topic.consumer.ssl.trustmanager.algorithm = PKIX
+	confluent.topic.consumer.ssl.truststore.certificates = null
+	confluent.topic.consumer.ssl.truststore.location = null
+	confluent.topic.consumer.ssl.truststore.password = null
+	confluent.topic.consumer.ssl.truststore.type = JKS
+	confluent.topic.interceptor.classes = []
+	confluent.topic.metadata.max.age.ms = 300000
+	confluent.topic.metric.reporters = []
+	confluent.topic.metrics.num.samples = 2
+	confluent.topic.metrics.recording.level = INFO
+	confluent.topic.metrics.sample.window.ms = 30000
+	confluent.topic.producer.acks = 1
+	confluent.topic.producer.batch.size = 16384
+	confluent.topic.producer.buffer.memory = 33554432
+	confluent.topic.producer.client.dns.lookup = use_all_dns_ips
+	confluent.topic.producer.client.id = 
+	confluent.topic.producer.compression.type = none
+	confluent.topic.producer.connections.max.idle.ms = 540000
+	confluent.topic.producer.delivery.timeout.ms = 120000
+	confluent.topic.producer.enable.idempotence = false
+	confluent.topic.producer.interceptor.classes = []
+	confluent.topic.producer.internal.auto.downgrade.txn.commit = false
+	confluent.topic.producer.linger.ms = 0
+	confluent.topic.producer.max.block.ms = 60000
+	confluent.topic.producer.max.in.flight.requests.per.connection = 5
+	confluent.topic.producer.max.request.size = 1048576
+	confluent.topic.producer.metadata.max.age.ms = 300000
+	confluent.topic.producer.metadata.max.idle.ms = 300000
+	confluent.topic.producer.metric.reporters = []
+	confluent.topic.producer.metrics.num.samples = 2
+	confluent.topic.producer.metrics.recording.level = INFO
+	confluent.topic.producer.metrics.sample.window.ms = 30000
+	confluent.topic.producer.partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	confluent.topic.producer.receive.buffer.bytes = 32768
+	confluent.topic.producer.reconnect.backoff.max.ms = 1000
+	confluent.topic.producer.reconnect.backoff.ms = 50
+	confluent.topic.producer.request.timeout.ms = 30000
+	confluent.topic.producer.retry.backoff.ms = 100
+	confluent.topic.producer.sasl.client.callback.handler.class = null
+	confluent.topic.producer.sasl.jaas.config = null
+	confluent.topic.producer.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	confluent.topic.producer.sasl.kerberos.min.time.before.relogin = 60000
+	confluent.topic.producer.sasl.kerberos.service.name = null
+	confluent.topic.producer.sasl.kerberos.ticket.renew.jitter = 0.05
+	confluent.topic.producer.sasl.kerberos.ticket.renew.window.factor = 0.8
+	confluent.topic.producer.sasl.login.callback.handler.class = null
+	confluent.topic.producer.sasl.login.class = null
+	confluent.topic.producer.sasl.login.refresh.buffer.seconds = 300
+	confluent.topic.producer.sasl.login.refresh.min.period.seconds = 60
+	confluent.topic.producer.sasl.login.refresh.window.factor = 0.8
+	confluent.topic.producer.sasl.login.refresh.window.jitter = 0.05
+	confluent.topic.producer.sasl.mechanism = GSSAPI
+	confluent.topic.producer.security.protocol = PLAINTEXT
+	confluent.topic.producer.security.providers = null
+	confluent.topic.producer.send.buffer.bytes = 131072
+	confluent.topic.producer.socket.connection.setup.timeout.max.ms = 30000
+	confluent.topic.producer.socket.connection.setup.timeout.ms = 10000
+	confluent.topic.producer.ssl.cipher.suites = null
+	confluent.topic.producer.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	confluent.topic.producer.ssl.endpoint.identification.algorithm = https
+	confluent.topic.producer.ssl.engine.factory.class = null
+	confluent.topic.producer.ssl.key.password = null
+	confluent.topic.producer.ssl.keymanager.algorithm = SunX509
+	confluent.topic.producer.ssl.keystore.certificate.chain = null
+	confluent.topic.producer.ssl.keystore.key = null
+	confluent.topic.producer.ssl.keystore.location = null
+	confluent.topic.producer.ssl.keystore.password = null
+	confluent.topic.producer.ssl.keystore.type = JKS
+	confluent.topic.producer.ssl.protocol = TLSv1.3
+	confluent.topic.producer.ssl.provider = null
+	confluent.topic.producer.ssl.secure.random.implementation = null
+	confluent.topic.producer.ssl.trustmanager.algorithm = PKIX
+	confluent.topic.producer.ssl.truststore.certificates = null
+	confluent.topic.producer.ssl.truststore.location = null
+	confluent.topic.producer.ssl.truststore.password = null
+	confluent.topic.producer.ssl.truststore.type = JKS
+	confluent.topic.producer.transaction.timeout.ms = 60000
+	confluent.topic.producer.transactional.id = null
+	confluent.topic.receive.buffer.bytes = 32768
+	confluent.topic.reconnect.backoff.max.ms = 1000
+	confluent.topic.reconnect.backoff.ms = 50
+	confluent.topic.replication.factor = 3
+	confluent.topic.request.timeout.ms = 30000
+	confluent.topic.retry.backoff.ms = 100
+	confluent.topic.sasl.client.callback.handler.class = null
+	confluent.topic.sasl.jaas.config = null
+	confluent.topic.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	confluent.topic.sasl.kerberos.min.time.before.relogin = 60000
+	confluent.topic.sasl.kerberos.service.name = null
+	confluent.topic.sasl.kerberos.ticket.renew.jitter = 0.05
+	confluent.topic.sasl.kerberos.ticket.renew.window.factor = 0.8
+	confluent.topic.sasl.login.callback.handler.class = null
+	confluent.topic.sasl.login.class = null
+	confluent.topic.sasl.login.refresh.buffer.seconds = 300
+	confluent.topic.sasl.login.refresh.min.period.seconds = 60
+	confluent.topic.sasl.login.refresh.window.factor = 0.8
+	confluent.topic.sasl.login.refresh.window.jitter = 0.05
+	confluent.topic.sasl.mechanism = GSSAPI
+	confluent.topic.security.protocol = PLAINTEXT
+	confluent.topic.security.providers = null
+	confluent.topic.send.buffer.bytes = 131072
+	confluent.topic.socket.connection.setup.timeout.max.ms = 30000
+	confluent.topic.socket.connection.setup.timeout.ms = 10000
+	confluent.topic.ssl.cipher.suites = null
+	confluent.topic.ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	confluent.topic.ssl.endpoint.identification.algorithm = https
+	confluent.topic.ssl.engine.factory.class = null
+	confluent.topic.ssl.key.password = null
+	confluent.topic.ssl.keymanager.algorithm = SunX509
+	confluent.topic.ssl.keystore.certificate.chain = null
+	confluent.topic.ssl.keystore.key = null
+	confluent.topic.ssl.keystore.location = null
+	confluent.topic.ssl.keystore.password = null
+	confluent.topic.ssl.keystore.type = JKS
+	confluent.topic.ssl.protocol = TLSv1.3
+	confluent.topic.ssl.provider = null
+	confluent.topic.ssl.secure.random.implementation = null
+	confluent.topic.ssl.trustmanager.algorithm = PKIX
+	confluent.topic.ssl.truststore.certificates = null
+	confluent.topic.ssl.truststore.location = null
+	confluent.topic.ssl.truststore.password = null
+	confluent.topic.ssl.truststore.type = JKS
+	connector.client.config.override.policy = None
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	listeners = null
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 10000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = /tmp/connect.offsets
+	plugin.path = [./confluent/share/confluent-hub-components]
+	response.http.headers.config = 
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	rest.host.name = null
+	rest.port = 8083
+	rest.servlet.initializor.classes = []
+	ssl.cipher.suites = null
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	task.shutdown.graceful.timeout.ms = 5000
+	topic.creation.enable = true
+	topic.tracking.allow.reset = true
+	topic.tracking.enable = true
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.standalone.StandaloneConfig:372)
+[2021-08-12 19:16:22,752] INFO Creating Kafka admin client (org.apache.kafka.connect.util.ConnectUtils:51)
+[2021-08-12 19:16:22,756] INFO AdminClientConfig values: 
+	bootstrap.servers = [pkc-4ywp7.us-west-2.aws.confluent.cloud:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	host.resolver.class = class org.apache.kafka.clients.DefaultHostResolver
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 20000
+	retries = 2147483647
+	retry.backoff.ms = 500
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.clients.admin.AdminClientConfig:372)
+[2021-08-12 19:16:22,902] INFO Successfully logged in. (org.apache.kafka.common.security.authenticator.AbstractLogin:61)
+[2021-08-12 19:16:23,013] WARN The configuration 'producer.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,013] WARN The configuration 'producer.request.timeout.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'consumer.ssl.endpoint.identification.algorithm' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'producer.bootstrap.servers' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'value.converter.schema.registry.basic.auth.user.info' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'consumer.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'producer.retry.backoff.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'reporter.admin.bootstrap.servers' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'value.converter.basic.auth.credentials.source' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,014] WARN The configuration 'reporter.producer.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'offset.storage.file.filename' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'consumer.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'reporter.admin.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'consumer.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'producer.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'reporter.admin.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'consumer.request.timeout.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,015] WARN The configuration 'consumer.retry.backoff.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'reporter.producer.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'producer.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'offset.flush.interval.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'reporter.admin.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'producer.ssl.endpoint.identification.algorithm' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'reporter.producer.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,016] WARN The configuration 'reporter.producer.bootstrap.servers' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:23,017] INFO Kafka version: 6.2.0-ce (org.apache.kafka.common.utils.AppInfoParser:119)
+[2021-08-12 19:16:23,017] INFO Kafka commitId: eba41251e36e4cfb (org.apache.kafka.common.utils.AppInfoParser:120)
+[2021-08-12 19:16:23,017] INFO Kafka startTimeMs: 1628759783016 (org.apache.kafka.common.utils.AppInfoParser:121)
+[2021-08-12 19:16:27,193] INFO Kafka cluster ID: lkc-0ynj5 (org.apache.kafka.connect.util.ConnectUtils:67)
+[2021-08-12 19:16:27,194] INFO App info kafka.admin.client for adminclient-1 unregistered (org.apache.kafka.common.utils.AppInfoParser:83)
+[2021-08-12 19:16:27,208] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:659)
+[2021-08-12 19:16:27,208] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:663)
+[2021-08-12 19:16:27,209] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:669)
+[2021-08-12 19:16:27,221] INFO Logging initialized @8805ms to org.eclipse.jetty.util.log.Slf4jLog (org.eclipse.jetty.util.log:169)
+[2021-08-12 19:16:27,262] INFO Added connector for http://:8083 (org.apache.kafka.connect.runtime.rest.RestServer:134)
+[2021-08-12 19:16:27,262] INFO Initializing REST server (org.apache.kafka.connect.runtime.rest.RestServer:206)
+[2021-08-12 19:16:27,268] INFO jetty-9.4.39.v20210325; built: 2021-03-25T14:42:11.471Z; git: 9fc7ca5a922f2a37b84ec9dbc26a5168cee7e667; jvm 11.0.8+10 (org.eclipse.jetty.server.Server:375)
+[2021-08-12 19:16:27,292] INFO Started http_8083@28f154cc{HTTP/1.1, (http/1.1)}{0.0.0.0:8083} (org.eclipse.jetty.server.AbstractConnector:331)
+[2021-08-12 19:16:27,293] INFO Started @8877ms (org.eclipse.jetty.server.Server:415)
+[2021-08-12 19:16:27,317] INFO Advertised URI: http://192.168.1.100:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:376)
+[2021-08-12 19:16:27,317] INFO REST server listening at http://192.168.1.100:8083/, advertising URL http://192.168.1.100:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:221)
+[2021-08-12 19:16:27,317] INFO Advertised URI: http://192.168.1.100:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:376)
+[2021-08-12 19:16:27,317] INFO REST admin endpoints at http://192.168.1.100:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:222)
+[2021-08-12 19:16:27,317] INFO Advertised URI: http://192.168.1.100:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:376)
+[2021-08-12 19:16:27,318] INFO Setting up None Policy for ConnectorClientConfigOverride. This will disallow any client configuration to be overridden (org.apache.kafka.connect.connector.policy.NoneConnectorClientConfigOverridePolicy:45)
+[2021-08-12 19:16:27,325] INFO Creating Kafka admin client (org.apache.kafka.connect.util.ConnectUtils:51)
+[2021-08-12 19:16:27,325] INFO AdminClientConfig values: 
+	bootstrap.servers = [pkc-4ywp7.us-west-2.aws.confluent.cloud:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	host.resolver.class = class org.apache.kafka.clients.DefaultHostResolver
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 20000
+	retries = 2147483647
+	retry.backoff.ms = 500
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.clients.admin.AdminClientConfig:372)
+[2021-08-12 19:16:27,327] INFO Successfully logged in. (org.apache.kafka.common.security.authenticator.AbstractLogin:61)
+[2021-08-12 19:16:27,330] WARN The configuration 'producer.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'producer.request.timeout.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'consumer.ssl.endpoint.identification.algorithm' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'producer.bootstrap.servers' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'value.converter.schema.registry.basic.auth.user.info' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'consumer.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'producer.retry.backoff.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'reporter.admin.bootstrap.servers' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'value.converter.basic.auth.credentials.source' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'reporter.producer.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,331] WARN The configuration 'offset.storage.file.filename' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'consumer.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'reporter.admin.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'consumer.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'producer.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'reporter.admin.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'consumer.request.timeout.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,332] WARN The configuration 'consumer.retry.backoff.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'reporter.producer.security.protocol' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'producer.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'offset.flush.interval.ms' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'reporter.admin.sasl.jaas.config' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'producer.ssl.endpoint.identification.algorithm' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'reporter.producer.sasl.mechanism' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,333] WARN The configuration 'reporter.producer.bootstrap.servers' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:380)
+[2021-08-12 19:16:27,334] INFO Kafka version: 6.2.0-ce (org.apache.kafka.common.utils.AppInfoParser:119)
+[2021-08-12 19:16:27,334] INFO Kafka commitId: eba41251e36e4cfb (org.apache.kafka.common.utils.AppInfoParser:120)
+[2021-08-12 19:16:27,334] INFO Kafka startTimeMs: 1628759787334 (org.apache.kafka.common.utils.AppInfoParser:121)
+[2021-08-12 19:16:30,902] INFO Kafka cluster ID: lkc-0ynj5 (org.apache.kafka.connect.util.ConnectUtils:67)
+[2021-08-12 19:16:30,903] INFO App info kafka.admin.client for adminclient-2 unregistered (org.apache.kafka.common.utils.AppInfoParser:83)
+[2021-08-12 19:16:30,908] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:659)
+[2021-08-12 19:16:30,908] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:663)
+[2021-08-12 19:16:30,908] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:669)
+[2021-08-12 19:16:30,912] INFO Kafka version: 6.2.0-ce (org.apache.kafka.common.utils.AppInfoParser:119)
+[2021-08-12 19:16:30,912] INFO Kafka commitId: eba41251e36e4cfb (org.apache.kafka.common.utils.AppInfoParser:120)
+[2021-08-12 19:16:30,912] INFO Kafka startTimeMs: 1628759790912 (org.apache.kafka.common.utils.AppInfoParser:121)
+[2021-08-12 19:16:31,025] INFO JsonConverterConfig values: 
+	converter.type = key
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.connect.json.JsonConverterConfig:372)
+[2021-08-12 19:16:31,026] INFO JsonConverterConfig values: 
+	converter.type = value
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.connect.json.JsonConverterConfig:372)
+[2021-08-12 19:16:31,033] INFO Kafka Connect standalone worker initialization took 11372ms (org.apache.kafka.connect.cli.ConnectStandalone:99)
+[2021-08-12 19:16:31,033] INFO Kafka Connect starting (org.apache.kafka.connect.runtime.Connect:51)
+[2021-08-12 19:16:31,034] INFO Herder starting (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:94)
+[2021-08-12 19:16:31,034] INFO Worker starting (org.apache.kafka.connect.runtime.Worker:201)
+[2021-08-12 19:16:31,035] INFO Starting FileOffsetBackingStore with file /tmp/connect.offsets (org.apache.kafka.connect.storage.FileOffsetBackingStore:58)
+[2021-08-12 19:16:31,037] INFO Worker started (org.apache.kafka.connect.runtime.Worker:208)
+[2021-08-12 19:16:31,037] INFO Herder started (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:97)
+[2021-08-12 19:16:31,037] INFO Initializing REST resources (org.apache.kafka.connect.runtime.rest.RestServer:226)
+[2021-08-12 19:16:31,068] INFO Adding admin resources to main listener (org.apache.kafka.connect.runtime.rest.RestServer:244)
+[2021-08-12 19:16:31,123] INFO DefaultSessionIdManager workerName=node0 (org.eclipse.jetty.server.session:334)
+[2021-08-12 19:16:31,124] INFO No SessionScavenger set, using defaults (org.eclipse.jetty.server.session:339)
+[2021-08-12 19:16:31,125] INFO node0 Scavenging every 660000ms (org.eclipse.jetty.server.session:132)
+[2021-08-12 19:16:31,465] INFO HV000001: Hibernate Validator 6.1.7.Final (org.hibernate.validator.internal.util.Version:21)
+[2021-08-12 19:16:31,681] INFO Started o.e.j.s.ServletContextHandler@55fb36de{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:916)
+[2021-08-12 19:16:31,681] INFO REST resources initialized; server is started and ready to handle requests (org.apache.kafka.connect.runtime.rest.RestServer:324)
+[2021-08-12 19:16:31,681] INFO Kafka Connect started (org.apache.kafka.connect.runtime.Connect:57)
+[2021-08-12 19:16:31,693] INFO AbstractConfig values: 
+ (org.apache.kafka.common.config.AbstractConfig:372)
+[2021-08-12 19:16:31,700] INFO Creating connector SplunkSink of type com.splunk.kafka.connect.SplunkSinkConnector (org.apache.kafka.connect.runtime.Worker:280)
+[2021-08-12 19:16:31,702] INFO SinkConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	topics = [confluent-audit-log-events]
+	topics.regex = 
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:372)
+[2021-08-12 19:16:31,702] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	topics = [confluent-audit-log-events]
+	topics.regex = 
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:372)
+[2021-08-12 19:16:31,707] INFO Instantiated connector SplunkSink with version v2.0.1 of type class com.splunk.kafka.connect.SplunkSinkConnector (org.apache.kafka.connect.runtime.Worker:298)
+[2021-08-12 19:16:31,707] INFO Finished creating connector SplunkSink (org.apache.kafka.connect.runtime.Worker:324)
+[2021-08-12 19:16:31,708] INFO kafka-connect-splunk starts (com.splunk.kafka.connect.SplunkSinkConnector:37)
+[2021-08-12 19:16:31,709] INFO SinkConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	topics = [confluent-audit-log-events]
+	topics.regex = 
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:372)
+[2021-08-12 19:16:31,709] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	topics = [confluent-audit-log-events]
+	topics.regex = 
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:372)
+[2021-08-12 19:16:31,710] INFO kafka-connect-splunk discovered 1 tasks (com.splunk.kafka.connect.SplunkSinkConnector:51)
+[2021-08-12 19:16:31,711] INFO Creating task SplunkSink-0 (org.apache.kafka.connect.runtime.Worker:523)
+[2021-08-12 19:16:31,712] INFO ConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:372)
+[2021-08-12 19:16:31,712] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:372)
+[2021-08-12 19:16:31,714] INFO TaskConfig values: 
+	task.class = class com.splunk.kafka.connect.SplunkSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:372)
+[2021-08-12 19:16:31,715] INFO Instantiated task SplunkSink-0 with version v2.0.1 of type com.splunk.kafka.connect.SplunkSinkTask (org.apache.kafka.connect.runtime.Worker:538)
+[2021-08-12 19:16:31,716] INFO StringConverterConfig values: 
+	converter.encoding = UTF8
+	converter.type = value
+ (org.apache.kafka.connect.storage.StringConverterConfig:372)
+[2021-08-12 19:16:31,716] INFO StringConverterConfig values: 
+	converter.encoding = UTF8
+	converter.type = key
+ (org.apache.kafka.connect.storage.StringConverterConfig:372)
+[2021-08-12 19:16:31,716] INFO Set up the key converter class org.apache.kafka.connect.storage.StringConverter for task SplunkSink-0 using the worker config (org.apache.kafka.connect.runtime.Worker:551)
+[2021-08-12 19:16:31,716] INFO Set up the value converter class org.apache.kafka.connect.storage.StringConverter for task SplunkSink-0 using the connector config (org.apache.kafka.connect.runtime.Worker:559)
+[2021-08-12 19:16:31,716] INFO Set up the header converter class org.apache.kafka.connect.storage.SimpleHeaderConverter for task SplunkSink-0 using the worker config (org.apache.kafka.connect.runtime.Worker:564)
+[2021-08-12 19:16:31,719] INFO Initializing: org.apache.kafka.connect.runtime.TransformationChain{} (org.apache.kafka.connect.runtime.Worker:646)
+[2021-08-12 19:16:31,720] INFO SinkConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	topics = [confluent-audit-log-events]
+	topics.regex = 
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:372)
+[2021-08-12 19:16:31,720] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = com.splunk.kafka.connect.SplunkSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = SplunkSink
+	predicates = []
+	tasks.max = 1
+	topics = [confluent-audit-log-events]
+	topics.regex = 
+	transforms = []
+	value.converter = class org.apache.kafka.connect.storage.StringConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:372)
+[2021-08-12 19:16:31,727] INFO ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [pkc-4ywp7.us-west-2.aws.confluent.cloud:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = connector-consumer-SplunkSink-0
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-SplunkSink
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 20000
+	retry.backoff.ms = 500
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = [hidden]
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = PLAIN
+	security.protocol = SASL_SSL
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:372)
+[2021-08-12 19:16:31,734] INFO Successfully logged in. (org.apache.kafka.common.security.authenticator.AbstractLogin:61)
+[2021-08-12 19:16:31,758] WARN The configuration 'metrics.context.resource.connector' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:380)
+[2021-08-12 19:16:31,758] WARN The configuration 'metrics.context.resource.version' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:380)
+[2021-08-12 19:16:31,758] WARN The configuration 'metrics.context.resource.type' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:380)
+[2021-08-12 19:16:31,758] WARN The configuration 'metrics.context.resource.commit.id' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:380)
+[2021-08-12 19:16:31,758] WARN The configuration 'metrics.context.resource.task' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:380)
+[2021-08-12 19:16:31,758] WARN The configuration 'metrics.context.connect.kafka.cluster.id' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:380)
+[2021-08-12 19:16:31,758] INFO Kafka version: 6.2.0-ce (org.apache.kafka.common.utils.AppInfoParser:119)
+[2021-08-12 19:16:31,759] INFO Kafka commitId: eba41251e36e4cfb (org.apache.kafka.common.utils.AppInfoParser:120)
+[2021-08-12 19:16:31,759] INFO Kafka startTimeMs: 1628759791758 (org.apache.kafka.common.utils.AppInfoParser:121)
+[2021-08-12 19:16:31,765] INFO Created connector SplunkSink (org.apache.kafka.connect.cli.ConnectStandalone:109)
+[2021-08-12 19:16:31,767] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Subscribed to topic(s): confluent-audit-log-events (org.apache.kafka.clients.consumer.KafkaConsumer:968)
+[2021-08-12 19:16:31,768] INFO SplunkSinkConnectorConfig values: 
+	splunk.flush.window = 30
+	splunk.header.custom = 
+	splunk.header.host = splunk.header.host
+	splunk.header.index = splunk.header.index
+	splunk.header.source = splunk.header.source
+	splunk.header.sourcetype = splunk.header.sourcetype
+	splunk.header.support = false
+	splunk.hec.ack.enabled = false
+	splunk.hec.ack.poll.interval = 10
+	splunk.hec.ack.poll.threads = 2
+	splunk.hec.backoff.threshhold.seconds = 60
+	splunk.hec.event.timeout = 300
+	splunk.hec.http.keepalive = true
+	splunk.hec.json.event.enrichment = 
+	splunk.hec.json.event.formatted = false
+	splunk.hec.lb.poll.interval = 120
+	splunk.hec.max.batch.size = 500
+	splunk.hec.max.http.connection.per.channel = 2
+	splunk.hec.max.outstanding.events = 1000000
+	splunk.hec.max.retries = -1
+	splunk.hec.raw = false
+	splunk.hec.raw.line.breaker = 
+	splunk.hec.socket.timeout = 60
+	splunk.hec.ssl.trust.store.password = [hidden]
+	splunk.hec.ssl.trust.store.path = 
+	splunk.hec.ssl.validate.certs = false
+	splunk.hec.threads = 1
+	splunk.hec.token = [hidden]
+	splunk.hec.total.channels = 2
+	splunk.hec.track.data = false
+	splunk.hec.uri = https://localhost:8889
+	splunk.hec.use.record.timestamp = true
+	splunk.indexes = main
+	splunk.sources = 
+	splunk.sourcetypes = ccloud_audit_logs
+ (com.splunk.kafka.connect.SplunkSinkConnectorConfig:372)
+[2021-08-12 19:16:31,904] INFO kafka-connect-splunk task starts with config=splunkURI:https://localhost:8889, raw:false, ack:false, indexes:main, sourcetypes:ccloud_audit_logs, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:false, trustStorePath:, socketTimeout:60, eventBatchTimeout:300, ackPollInterval:10, ackPollThreads:2, maxHttpConnectionPerChannel:2, flushWindow:30, totalHecChannels:2, enrichment:, maxBatchSize:500, numberOfThreads:1, lineBreaker:, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:false, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, lbPollInterval:120 (com.splunk.kafka.connect.SplunkSinkTask:69)
+[2021-08-12 19:16:31,904] INFO WorkerSinkTask{id=SplunkSink-0} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:309)
+[2021-08-12 19:16:33,459] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Cluster ID: lkc-0ynj5 (org.apache.kafka.clients.Metadata:279)
+[2021-08-12 19:16:33,475] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Discovered group coordinator b1-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 2147483646 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:848)
+[2021-08-12 19:16:33,479] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:538)
+[2021-08-12 19:16:35,004] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:538)
+[2021-08-12 19:16:35,193] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Successfully joined group with generation Generation{generationId=13, memberId='connector-consumer-SplunkSink-0-71de3de3-c593-467a-8eca-6d25c6d702f5', protocol='range'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:594)
+[2021-08-12 19:16:35,196] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Finished assignment for group at generation 13: {connector-consumer-SplunkSink-0-71de3de3-c593-467a-8eca-6d25c6d702f5=Assignment(partitions=[confluent-audit-log-events-0, confluent-audit-log-events-1, confluent-audit-log-events-2, confluent-audit-log-events-3, confluent-audit-log-events-4, confluent-audit-log-events-5, confluent-audit-log-events-6, confluent-audit-log-events-7, confluent-audit-log-events-8, confluent-audit-log-events-9, confluent-audit-log-events-10, confluent-audit-log-events-11])} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:626)
+[2021-08-12 19:16:35,509] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Successfully synced group in generation Generation{generationId=13, memberId='connector-consumer-SplunkSink-0-71de3de3-c593-467a-8eca-6d25c6d702f5', protocol='range'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:758)
+[2021-08-12 19:16:35,509] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Notifying assignor about the new Assignment(partitions=[confluent-audit-log-events-0, confluent-audit-log-events-1, confluent-audit-log-events-2, confluent-audit-log-events-3, confluent-audit-log-events-4, confluent-audit-log-events-5, confluent-audit-log-events-6, confluent-audit-log-events-7, confluent-audit-log-events-8, confluent-audit-log-events-9, confluent-audit-log-events-10, confluent-audit-log-events-11]) (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:276)
+[2021-08-12 19:16:35,512] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Adding newly assigned partitions: confluent-audit-log-events-0, confluent-audit-log-events-4, confluent-audit-log-events-3, confluent-audit-log-events-2, confluent-audit-log-events-1, confluent-audit-log-events-8, confluent-audit-log-events-7, confluent-audit-log-events-6, confluent-audit-log-events-5, confluent-audit-log-events-11, confluent-audit-log-events-10, confluent-audit-log-events-9 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:288)
+[2021-08-12 19:16:35,711] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-0 to the committed offset FetchPosition{offset=1413171, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 3 rack: 0)], epoch=57}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,711] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-4 to the committed offset FetchPosition{offset=1415209, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 1 rack: 1)], epoch=56}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,711] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-3 to the committed offset FetchPosition{offset=1413718, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 0 rack: 0)], epoch=56}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,711] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-2 to the committed offset FetchPosition{offset=1415277, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 5 rack: 2)], epoch=57}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,712] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-1 to the committed offset FetchPosition{offset=1409660, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b4-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 4 rack: 1)], epoch=57}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,712] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-8 to the committed offset FetchPosition{offset=1414029, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b5-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 5 rack: 2)], epoch=54}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,712] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-7 to the committed offset FetchPosition{offset=1410282, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b4-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 4 rack: 1)], epoch=52}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,712] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-6 to the committed offset FetchPosition{offset=1409559, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b3-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 3 rack: 0)], epoch=53}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,712] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-5 to the committed offset FetchPosition{offset=1412534, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b2-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 2 rack: 2)], epoch=56}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,713] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-11 to the committed offset FetchPosition{offset=1414075, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b2-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 2 rack: 2)], epoch=52}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,713] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-10 to the committed offset FetchPosition{offset=1413398, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b1-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 1 rack: 1)], epoch=57}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:16:35,713] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Setting offset for partition confluent-audit-log-events-9 to the committed offset FetchPosition{offset=1412618, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[b0-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 0 rack: 0)], epoch=57}} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:820)
+[2021-08-12 19:17:40,546] INFO Kafka Connect stopping (org.apache.kafka.connect.runtime.Connect:67)
+[2021-08-12 19:17:40,547] INFO Stopping REST server (org.apache.kafka.connect.runtime.rest.RestServer:332)
+[2021-08-12 19:17:40,552] INFO Stopped http_8083@28f154cc{HTTP/1.1, (http/1.1)}{0.0.0.0:8083} (org.eclipse.jetty.server.AbstractConnector:381)
+[2021-08-12 19:17:40,552] INFO node0 Stopped scavenging (org.eclipse.jetty.server.session:149)
+[2021-08-12 19:17:40,553] INFO REST server stopped (org.apache.kafka.connect.runtime.rest.RestServer:349)
+[2021-08-12 19:17:40,553] INFO Herder stopping (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:102)
+[2021-08-12 19:17:40,554] INFO Stopping task SplunkSink-0 (org.apache.kafka.connect.runtime.Worker:873)
+[2021-08-12 19:17:40,554] WARN purge offsets for closed partitions=[confluent-audit-log-events-0, confluent-audit-log-events-4, confluent-audit-log-events-3, confluent-audit-log-events-2, confluent-audit-log-events-1, confluent-audit-log-events-8, confluent-audit-log-events-7, confluent-audit-log-events-6, confluent-audit-log-events-5, confluent-audit-log-events-11, confluent-audit-log-events-10, confluent-audit-log-events-9] leaving offsets={} (com.splunk.kafka.connect.SplunkSinkTask:169)
+[2021-08-12 19:17:40,559] INFO LoadBalancer stopped (com.splunk.hecclient.LoadBalancer:193)
+[2021-08-12 19:17:40,559] INFO kafka-connect-splunk task ends with config=splunkURI:https://localhost:8889, raw:false, ack:false, indexes:main, sourcetypes:ccloud_audit_logs, sources:, headerSupport:false, headerCustom:, httpKeepAlive:true, validateCertificates:false, trustStorePath:, socketTimeout:60, eventBatchTimeout:300, ackPollInterval:10, ackPollThreads:2, maxHttpConnectionPerChannel:2, flushWindow:30, totalHecChannels:2, enrichment:, maxBatchSize:500, numberOfThreads:1, lineBreaker:, maxOutstandingEvents:1000000, maxRetries:-1, useRecordTimestamp:true, hecEventFormatted:false, trackData:false, headerSupport:false, headerCustom:, headerIndex:splunk.header.index, headerSource:splunk.header.source, headerSourcetype:splunk.header.sourcetype, headerHost:splunk.header.host, lbPollInterval:120 (com.splunk.kafka.connect.SplunkSinkTask:356)
+[2021-08-12 19:17:40,559] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Revoke previously assigned partitions confluent-audit-log-events-0, confluent-audit-log-events-4, confluent-audit-log-events-3, confluent-audit-log-events-2, confluent-audit-log-events-1, confluent-audit-log-events-8, confluent-audit-log-events-7, confluent-audit-log-events-6, confluent-audit-log-events-5, confluent-audit-log-events-11, confluent-audit-log-events-10, confluent-audit-log-events-9 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:307)
+[2021-08-12 19:17:40,559] INFO [Consumer clientId=connector-consumer-SplunkSink-0, groupId=connect-SplunkSink] Member connector-consumer-SplunkSink-0-71de3de3-c593-467a-8eca-6d25c6d702f5 sending LeaveGroup request to coordinator b1-pkc-4ywp7.us-west-2.aws.confluent.cloud:9092 (id: 2147483646 rack: null) due to the consumer is being closed (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:1042)
+[2021-08-12 19:17:40,750] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:659)
+[2021-08-12 19:17:40,750] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:663)
+[2021-08-12 19:17:40,751] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:669)
+[2021-08-12 19:17:40,754] INFO App info kafka.consumer for connector-consumer-SplunkSink-0 unregistered (org.apache.kafka.common.utils.AppInfoParser:83)
+[2021-08-12 19:17:40,756] INFO Stopping connector SplunkSink (org.apache.kafka.connect.runtime.Worker:401)
+[2021-08-12 19:17:40,757] INFO Scheduled shutdown for WorkerConnector{id=SplunkSink} (org.apache.kafka.connect.runtime.WorkerConnector:249)
+[2021-08-12 19:17:40,757] INFO kafka-connect-splunk stops (com.splunk.kafka.connect.SplunkSinkConnector:42)
+[2021-08-12 19:17:40,757] INFO Completed shutdown for WorkerConnector{id=SplunkSink} (org.apache.kafka.connect.runtime.WorkerConnector:269)
+[2021-08-12 19:17:40,757] INFO Worker stopping (org.apache.kafka.connect.runtime.Worker:215)
+[2021-08-12 19:17:40,758] INFO Stopped FileOffsetBackingStore (org.apache.kafka.connect.storage.FileOffsetBackingStore:66)
+[2021-08-12 19:17:40,758] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:659)
+[2021-08-12 19:17:40,758] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:663)
+[2021-08-12 19:17:40,758] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:669)
+[2021-08-12 19:17:40,758] INFO App info kafka.connect for 192.168.1.100:8083 unregistered (org.apache.kafka.common.utils.AppInfoParser:83)
+[2021-08-12 19:17:40,758] INFO Worker stopped (org.apache.kafka.connect.runtime.Worker:236)
+[2021-08-12 19:17:40,759] INFO Herder stopped (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:120)
+[2021-08-12 19:17:40,759] INFO Kafka Connect stopped (org.apache.kafka.connect.runtime.Connect:72)
