@@ -11,8 +11,10 @@ Quicky get access to Confluent Cloud with this script. This repo runs a Kafka st
 #Pre-requisistes
 - docker
 - Need to edit two files with your details (see below)
-```-my-connect-standalone.properties 
--splunksink.properties```
+```
+-my-connect-standalone.properties 
+-splunksink.properties
+```
 
 To get started:
 ```
