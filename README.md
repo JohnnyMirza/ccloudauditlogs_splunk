@@ -2,8 +2,8 @@
 Quicky get access to Confluent Cloud with this script. This repo runs a Kafka standalone-connect worker which is needs to be configured to connect to a Confluent Cloud instance. Apart from Kafka Connect (Confluent Platform Binary), this repo will also spin up a Splunk Enterprise instance in Docker.
 
 
-![image](images/splunk_cc_auditlogs.png)
-![image](images/cc_auditlogs.png)
+![image](images/splunk_cc_auditlogs.png| width=100)
+![image](images/cc_auditlogs.png| width=100)
 
 Pre-requisistes
 docker
