@@ -1,10 +1,11 @@
 # Confluent Cloud AuditLogs with Splunk Dashboards
 Quicky get access to Confluent Cloud with this script. This repo runs a Kafka standalone-connect worker which is needs to be configured to connect to a Confluent Cloud instance. Apart from Kafka Connect (Confluent Platform Binary), this repo will also spin up a Splunk Enterprise instance in Docker.
 
-
+<p float="left">
 <img src="images/splunk_cc_auditlogs.png" width="60%" height="60%">
 <img src="images/cc_auditlogs.png" width="60%" height="60%">
-
+<p>
+   
 Pre-requisistes
 docker
 Need to edit two files with your details (see below)
