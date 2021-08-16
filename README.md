@@ -3,7 +3,7 @@ Quicky get access to Confluent Cloud with this script. This repo runs a Kafka st
 
 <p align="center">
    <img src="images/splunk_cc_auditlogs.png" width="50%" height="50%">
-   &nbsp; &nbsp;
+   &nbsp;
    <img src="images/cc_auditlogs.png" width="50%" height="50%">
 </p>
 
