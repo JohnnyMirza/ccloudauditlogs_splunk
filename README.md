@@ -1,5 +1,9 @@
 # Confluent Cloud AuditLogs with Splunk Dashboards
-Quicky get access to Confluent Cloud with this script. This repo runs a Kafka standalone-connect worker which is needs to be configured to connect to a Confluent Cloud instance. Apart from Kafka Connect (Confluent Platform Binary), this repo will also spin up a Splunk Enterprise instance in Docker.
+This repo will walk you through a 'how to' on visualising your Confluent Cloud Auditlogs with Splunk Pre-Built dashboards. This repo runs a Kafka standalone-connect worker which needs to be configured to connect to a Confluent Cloud instance.
+
+There are two options for building the local kafka connect docker image, standalone and distributed. Standalone (docker-compose.connect.standalone.yml) is suggested for dev/test and what is used in this demo, and where offsets are stored in a local file .e.g /tmp/offsets. Distributed (docker-compose.connect.distributed.yml) allows you to scale out connect workers and also store your offsets in another Kafka instance, e.g. confluent cloud cluster or local kafka instance. To learn more about this process in more detail take a look at this git repo: https://github.com/javabrett/cp-all-in-one/tree/splunk-connector/Docker-connect.
+
+This repo includes Kafka Connect and a Splunk enterprise instance running in docker.
 
 <p align="center">
    <img src="images/splunk_cc_auditlogs.png" width="50%" height="50%">
@@ -8,29 +12,20 @@ Quicky get access to Confluent Cloud with this script. This repo runs a Kafka st
 </p>
 
    
-#Pre-requisistes
-- docker
-- Need to edit two files with your details (see below)
-```
--my-connect-standalone.properties 
--splunksink.properties
-```
-
 To get started:
 ```
-1. git clone https://github.com/JohnnyMirza/ccloudauditlogs_splunk_standalone.git
-2. Option 1: From your Confluent Cloud Console, "CLI and tools -> Kafka Connect" and generate a "my-connect-standalone.properties" file.
-   Option 2: There is a sample "my-connect-standalone.properties.sample" in this repo, you can added your API-keys in the relevant section (rename to my-connect-standalone.properties). refer to the below for more details
-    -CLOUD_URL: cluster->Settings->Bootstrap server
-    -CLOUD_KEY: cluster->API keys
-    -CLOUD_SECRET: cluster->API keys
-    -SCHEMA_REGISTRY_URL: Environment->Schema Registry->API endpoint
-4. Copy the splunksink.properties.sample to splunksink.properties and add change the 'confluent.topic.bootstrap.servers' to your cloud instance. (same as CLOUD_URL above)
-5. docker-compose up -d
-6. Run standalone connect
-    ./confluent/bin/connect-standalone my-connect-standalone.properties splunksink.properties
+1. git clone https://github.com/JohnnyMirza/ccloudauditlogs_splunk.git
+2. cd ccloudauditlogs_splunk
+3. Fill out your details in env.sh
+4. run `source env.sh` from cmd
+4. docker build \
+    --build-arg CONNECTOR_OWNER=${CONNECTOR_OWNER} \
+    --build-arg CONNECTOR_NAME=${CONNECTOR_NAME} \
+    --build-arg CONNECTOR_VERSION=${CONNECTOR_VERSION} \
+    -t localbuild/connect_standalone_with_${CONNECTOR_NAME}:${CONNECTOR_VERSION} \
+    -f ./Docker-connect/standalone/Dockerfile ./Docker-connect/standalone
+4. docker-compose up -d (copy standalone/distributed.example.yml files as needed)
 ```
-
 
 **Access to Splunk Dashboards
 to log into splunk go to:
