@@ -1,0 +1,17 @@
+---
+version: '2'
+services:
+
+  splunk_search:
+    image: splunk/splunk:latest
+    container_name: splunk
+    user: root
+    environment:
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_HEC_TOKEN=3bca5f4c-1eff-4eee-9113-ea94c284478a
+      - SPLUNK_PASSWORD=Password1
+      # - SPLUNK_LICENSE_URI=Free
+      - SPLUNK_APPS_URL=https://raw.githubusercontent.com/JohnnyMirza/ccloudauditlogs_splunk/main/confluent_cloud_app.tgz,https://raw.githubusercontent.com/JohnnyMirza/ccloudauditlogs_splunk/main/splunk-sankey-diagram-custom-visualization_150.tgz
+    ports:
+      - 8000:8000
+      - 8089:8088
