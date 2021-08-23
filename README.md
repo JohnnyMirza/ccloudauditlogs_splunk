@@ -18,13 +18,13 @@ To get started:
 2. cd ccloudauditlogs_splunk
 3. Fill out your details in env.sh
 4. run `source env.sh` from cmd
-4. docker build \
+5. docker build \
     --build-arg CONNECTOR_OWNER=${CONNECTOR_OWNER} \
     --build-arg CONNECTOR_NAME=${CONNECTOR_NAME} \
     --build-arg CONNECTOR_VERSION=${CONNECTOR_VERSION} \
     -t localbuild/connect_standalone_with_${CONNECTOR_NAME}:${CONNECTOR_VERSION} \
     -f ./Docker-connect/standalone/Dockerfile ./Docker-connect/standalone
-4. docker-compose up -d (copy standalone/distributed.example.yml files as needed)
+6. docker-compose up -d (copy standalone/distributed.example.yml files as needed)
 ```
 
 **Access to Splunk Dashboards
