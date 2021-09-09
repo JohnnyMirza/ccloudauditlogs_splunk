@@ -46,7 +46,7 @@ services:
       CONNECTOR_CONFLUENT_TOPIC_REPLICATION_FACTOR: 1
       CONNECTOR_VALUE_CONVERTER: org.apache.kafka.connect.storage.StringConverter
 
-  splunk_search:
+  splunk:
     image: splunk/splunk:latest
     container_name: splunk
     user: root
