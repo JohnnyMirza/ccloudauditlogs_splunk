@@ -7,7 +7,7 @@ DATA=$( cat << EOF
     "connector.class": "com.splunk.kafka.connect.SplunkSinkConnector",
     "topics":"confluent-audit-log-events",
     "splunk.indexes": "main",
-    "splunk.hec.uri" : "https://localhost:8889",
+    "splunk.hec.uri": "https://splunk:8088",
     "splunk.hec.token" : "3bca5f4c-1eff-4eee-9113-ea94c284478a",
     "splunk.sourcetypes"  : "ccloud_audit_logs",
     "confluent.topic.bootstrap.servers"    : "$BOOTSTRAP_SERVERS",
